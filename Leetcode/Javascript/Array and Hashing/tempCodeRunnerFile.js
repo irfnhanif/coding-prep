@@ -1,0 +1,1 @@
+arr.slice(i)
