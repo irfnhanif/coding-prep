@@ -4,5 +4,3 @@ def findDigits(n):
         if int(i) != 0 and n % int(i) == 0:
             c += 1
     return c
-
-print(findDigits(123)) 
