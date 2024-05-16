@@ -10,5 +10,5 @@ if ($file == false) {
     echo ("Error in opening new file");
     exit();
 }
-fwrite($file, "<?php\n");
+fwrite($file, "<?php\n //New codewars kata, Fight!");
 fclose($file);
