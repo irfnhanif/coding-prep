@@ -26,9 +26,9 @@ public class SolutionTemplateCreator {
         try (FileWriter writer = new FileWriter(file)) {
             String newClassTemplate =
                     String.format("public class %s {\n" +
-                                  "   public static void main(String[] args) {\n" +
-                                  "       System.out.println(\"New Leetcode problem, Fight!\");\n" +
-                                  "   }\n" +
+                                  "    public static void main(String[] args) {\n" +
+                                  "        System.out.println(\"New Leetcode problem, Fight!\");\n" +
+                                  "    }\n" +
                                   "}", fileName);
             writer.write(newClassTemplate);
         } catch (IOException e) {
