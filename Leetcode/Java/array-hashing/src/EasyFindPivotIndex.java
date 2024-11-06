@@ -13,14 +13,11 @@ public class EasyFindPivotIndex {
             if (i != 0) {
                 leftSum = Arrays.stream(Arrays.copyOfRange(nums,0, i)).sum();
             }
-            System.out.println(leftSum);
 
             if (i != nums.length - 1) {
                 rightSum = Arrays.stream(Arrays.copyOfRange(nums, i+1, nums.length)).sum();
             }
-            System.out.println(rightSum);
 
-            System.out.println("-");
             if (leftSum == rightSum) {
                 return i;
             }
