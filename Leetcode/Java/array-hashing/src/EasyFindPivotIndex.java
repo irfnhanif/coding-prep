@@ -7,18 +7,16 @@ public class EasyFindPivotIndex {
     }
 
     public static int pivotIndex(int[] nums) {
+        int[] leftSums = new int[nums.length];
+        int[] rightSums = new int[nums.length];
+        leftSums[0] = nums[0];
+        rightSums[nums.length - 1] = nums[nums.length - 1];
+        for (int i = 1, j = nums.length - 2; i < nums.length && j >= 0 ; i++, j--) {
+            leftSums[i] = leftSums[i-1] + nums[i];
+            rightSums[j] = rightSums[j+1] + nums[j];
+        }
         for (int i = 0; i < nums.length; i++) {
-            int leftSum = 0;
-            int rightSum = 0;
-            if (i != 0) {
-                leftSum = Arrays.stream(Arrays.copyOfRange(nums,0, i)).sum();
-            }
-
-            if (i != nums.length - 1) {
-                rightSum = Arrays.stream(Arrays.copyOfRange(nums, i+1, nums.length)).sum();
-            }
-
-            if (leftSum == rightSum) {
+            if (leftSums[i] == rightSums[i]){
                 return i;
             }
         }
